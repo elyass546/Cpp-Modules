@@ -1,10 +1,10 @@
-NAME = PhoneBook
+NAME = Brain
 
 CC = @c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILE = Contact.cpp main.cpp PhoneBook.cpp
+FILE = main.cpp
 
 RM = @rm -f
 
@@ -16,12 +16,12 @@ C_RES = \033[0m
 all : $(NAME)
 
 $(NAME) : $(FILE)
-	@echo "$(C_GREEN)["PhoneBook" CREATED]$(C_RES)"
+	@echo "$(C_GREEN)["Brain" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 
 clean :
 	$(RM) $(NAME)
-	@echo "$(C_RED)["PhoneBook" REMOVED]$(C_RES)"
+	@echo "$(C_RED)["Brain" REMOVED]$(C_RES)"
 
 fclean : clean
 
