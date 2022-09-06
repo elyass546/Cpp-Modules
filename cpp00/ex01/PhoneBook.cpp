@@ -1,12 +1,8 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook( void ) {
+PhoneBook::PhoneBook( void ) {};
 
-};
-
-PhoneBook::~PhoneBook( void ) {
-
-};
+PhoneBook::~PhoneBook( void ) {};
 
 int PhoneBook::add(std::string str, int count) {
 
@@ -68,6 +64,7 @@ int PhoneBook::add(std::string str, int count) {
 };
 
 int	PhoneBook::print(int a){
+	a--;
 	if (this->contacts[a].getFirstName().empty())
 	{
 		std::cout << "This contact is empty :(" << std::endl << "Try again with another index" << std::endl;
@@ -100,13 +97,13 @@ void	PhoneBook::Search_helper(std::string s){
 };
 
 void	PhoneBook::Search(void){
-	int a = 1;
+	int a = 0;
 
-	while (a < 9)
+	while (a < 8)
 	{
 		if (this->contacts[a].getFirstName().empty())
 			break;
-		std::cout << std::setw(10) << a << '|';
+		std::cout << std::setw(10) << a + 1 << '|';
 		Search_helper(this->contacts[a].getFirstName());
 		if (this->contacts[a].getLastName().empty())
 			break;
@@ -121,15 +118,3 @@ void	PhoneBook::Search(void){
 	}
 	
 };
-
-int	PhoneBook::my_atoi(std::string str){
-	for (int i = 0; str[i]; i++){
-        if (!isnumber(str[i]))
-        {
-          std::cout << "input is not a digit" << std::endl;
-          return (-1);
-        }
-    }
-	return (atoi(str.c_str()));
-};
-

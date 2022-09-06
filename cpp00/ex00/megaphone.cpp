@@ -23,7 +23,7 @@ int main(int ac, char **av)
             i++;
         }
         j++;
-        std::cout << str << ' ';
+        std::cout << str;
     }
     std::cout << "\n";
     
