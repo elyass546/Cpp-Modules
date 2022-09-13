@@ -1,12 +1,20 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed( void ) {
-    this->value = 0;
     std::cout << "Default constructor called" << std::endl;
 };
 
+Fixed::Fixed( const int val ) {
+    value = val << this->numfrac;
+    std::cout << "Int constructor called" << std::endl;
+};
+
+Fixed::Fixed( const float val ) {
+    value = roundf(val * (1 << this->numfrac));
+    std::cout << "Float constructor called" << std::endl;
+};
+
 Fixed::~Fixed( void ) {
-    this->value = 0;
     std::cout << "Destructor called" << std::endl;
 };
 
@@ -20,7 +28,6 @@ void    Fixed::setRawBits(int const Nbr) {
 };
 
 int     Fixed::getRawBits( void ) const {
-    std::cout << "getRawBits member function called" << std::endl;
     return (value);
 };
 
@@ -28,4 +35,17 @@ Fixed &Fixed::operator=(Fixed const & F2){
     std::cout << "Copy assignment operator called" << std::endl;
     this->value = F2.getRawBits();
     return (*this);
+}
+
+std::ostream& operator<<(std::ostream& st ,Fixed const & Fix) {
+    st << Fix.toFloat();
+    return (st);
+}
+
+int Fixed::toInt( void ) const {
+    return (value / (1 << numfrac));
+}
+
+float Fixed::toFloat( void ) const {
+    return ( float(value) / float(1 << this->numfrac));
 }
