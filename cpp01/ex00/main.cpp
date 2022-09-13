@@ -3,7 +3,8 @@
 int main(){
     Zombie *zombie;
 
-    zombie = newZombie("Hello I'm a new Zombie here ;D");
+    zombie = newZombie("ilias");
     zombie->announce();
     delete zombie;
+    randomChump("ilias");
 }

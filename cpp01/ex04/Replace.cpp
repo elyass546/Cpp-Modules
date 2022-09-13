@@ -4,7 +4,6 @@
 
 void	File::ReplaceFuc(){
 	std::ifstream	MyFile(name);
-	std::ofstream	NewFile(name + ".replace");
 	std::string		temp2;
 	std::string		s;
 	unsigned long	count = 0;
@@ -13,6 +12,7 @@ void	File::ReplaceFuc(){
 		std::cout << "file not found :(" << std::endl;
 		return ;
 	}
+	std::ofstream	NewFile(name + ".replace");
 	while (getline(MyFile, s)){
 		count = s.find(s1, 0);
 		if (count == std::string::npos){

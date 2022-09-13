@@ -79,7 +79,7 @@ int	PhoneBook::print(int a){
 };
 
 void	PhoneBook::preprint(void) {
-	std::cout.flags ( std::ios::right);
+	// std::cout.flags ( std::ios::right);
 	std::cout << std::setw(10) << "index" << '|';
 	std::cout << std::setw(10) << "Firstname" << '|';
 	std::cout << std::setw(10) << "Lastname" << '|';
