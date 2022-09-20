@@ -1,10 +1,10 @@
-NAME = fragtrap
+NAME = diamondtrap
 
 CC = @c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILE = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+FILE = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 RM = @rm -f
 
@@ -16,12 +16,12 @@ C_RES = \033[0m
 all : $(NAME)
 
 $(NAME) : $(FILE)
-	@echo "$(C_GREEN)["FragTrap" CREATED]$(C_RES)"
+	@echo "$(C_GREEN)["DiamondTrap" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 
 clean :
 	$(RM) $(NAME)
-	@echo "$(C_RED)["FragTrap" REMOVED]$(C_RES)"
+	@echo "$(C_RED)["DiamondTrap" REMOVED]$(C_RES)"
 
 fclean : clean
 

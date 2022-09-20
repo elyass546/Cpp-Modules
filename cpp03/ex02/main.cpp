@@ -1,12 +1,14 @@
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-    ClapTrap test("test1");
-    ClapTrap test2("test2");
-    test.attack("test2");
-    test2.takeDamage(10);
-    test2.beRepaired(50);
-    test2.attack("test1");
-    test.takeDamage(20);
+    FragTrap    salam("salam");
+    FragTrap    labas("labas");
+    ScavTrap    ilias("ilias");
+    salam.attack("labas");
+    labas.takeDamage(5);
+    labas.attack("ilias");
+    ilias.guardGate();
+    ilias.attack("labas");
+    labas.takeDamage(40);
     return 0;
 }

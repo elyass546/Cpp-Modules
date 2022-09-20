@@ -4,7 +4,7 @@ CC = @c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILE = main.cpp ClapTrap.cpp
+FILE = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 RM = @rm -f
 
