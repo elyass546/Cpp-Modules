@@ -2,6 +2,7 @@
 
 Animal::Animal( void ) {
     std::cout << "Animal Default constructor called!" << std::endl;
+    setTypeValue("Animal");
 }
 
 Animal::~Animal( void ) {

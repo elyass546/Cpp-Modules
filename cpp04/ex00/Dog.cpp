@@ -2,6 +2,7 @@
 
 Dog::Dog( void ) {
     std::cout << "Dog Default constructor called!" << std::endl;
+    setTypeValue("Dog");
 }
 
 Dog::~Dog( void ) {
@@ -22,4 +23,3 @@ Dog  Dog::operator=( Dog const & Ani ) {
 void    Dog::makeSound( void ) {
     std::cout << "The Dog says : Haow " << std::endl;
 }
-

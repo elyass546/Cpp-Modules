@@ -2,6 +2,7 @@
 
 Cat::Cat( void ) {
     std::cout << "Cat Default constructor called!" << std::endl;
+    setTypeValue("Cat");
 }
 
 Cat::~Cat( void ) {
