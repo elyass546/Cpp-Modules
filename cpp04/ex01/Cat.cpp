@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat( void ) {
+Cat::Cat( void ){
     brain = new Brain();
     setTypeValue("Cat");
     std::cout << "Cat Default constructor called!" << std::endl;
@@ -13,7 +13,7 @@ Cat::~Cat( void ) {
 
 Cat::Cat( Cat const& Ani ) {
     std::cout << "Cat copy constructor called!" << std::endl;
-    type = Ani.type;
+    *this = Ani;
 }
 
 Cat  Cat::operator=( Cat const & Ani ) {
@@ -27,4 +27,16 @@ Cat  Cat::operator=( Cat const & Ani ) {
 
 void    Cat::makeSound( void ) {
     std::cout << "The cat says : Meow " << std::endl;
+}
+
+Brain * Cat::getBrain() const {
+    return (this->brain);
+}
+
+void    Cat::setBrain( const std::string& str, int index) {
+    brain->setIdea(str, index);
+}
+
+std::string Cat::getBrain( int index ) {
+    return (brain->getIdea(index));
 }

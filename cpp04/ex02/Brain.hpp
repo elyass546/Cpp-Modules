@@ -9,7 +9,9 @@ class Brain {
         Brain( void );
         Brain( Brain const& );
         Brain   operator=( Brain const& );
-        ~Brain( void );
+        virtual ~Brain( void );
+        void    setIdea( const std::string &, int );
+        virtual std::string getIdea( int  );
 };
 
 #endif

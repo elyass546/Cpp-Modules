@@ -1,18 +1,18 @@
-#include<iostream>
+#include <iostream>
  
 class Base{
     public:
-        virtual void show() = 0;
+        virtual std::string show() = 0;
 };
  
 class Derived: public Base{
     public:
-        void show() { std::cout << "In Derived \n"; }
+        std::string show() { return ("In Derived");}
 };
  
 int main(void)
 {
-    Base *bp = new Derived();
-    bp->show();
+    Base bp;
+    std::cout << bp.show() << std::endl;
     return 0;
 }
