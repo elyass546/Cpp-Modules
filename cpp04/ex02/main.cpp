@@ -6,7 +6,9 @@ int main()
     Animal* j = new Dog();
     Animal* i = new Cat();
     Animal *animal[10];
-    // Animal test;
+    // Animal *test = new Animal();
+    // Animal test2;
+
 
     std::string str = "Hello Wrold!";
 

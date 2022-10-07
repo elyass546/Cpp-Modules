@@ -6,7 +6,7 @@ class   Dog : public Animal {
     public:
         Dog( void );
         Dog( Dog const& );
-        Dog  operator=( Dog const& );
+        Dog &operator=( Dog const& );
         ~Dog( void );
         void    makeSound( void );
 };

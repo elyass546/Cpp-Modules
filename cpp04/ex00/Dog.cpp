@@ -14,7 +14,7 @@ Dog::Dog( Dog const& Ani ) {
     type = Ani.type;
 }
 
-Dog  Dog::operator=( Dog const & Ani ) {
+Dog &Dog::operator=( Dog const & Ani ) {
     std::cout << "Dog copy assignment operator called!" << std::endl;
     type = Ani.type;
     return (*this);

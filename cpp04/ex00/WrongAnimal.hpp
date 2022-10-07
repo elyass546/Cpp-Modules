@@ -8,7 +8,7 @@ class   WrongAnimal {
     public:
         WrongAnimal( void );
         WrongAnimal( WrongAnimal const& );
-        WrongAnimal  operator=( WrongAnimal const& );
+        WrongAnimal  &operator=( WrongAnimal const& );
         ~WrongAnimal( void );
         void    setTypeValue( std::string );
         std::string getTypeValue( void );

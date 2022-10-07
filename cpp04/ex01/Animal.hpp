@@ -14,7 +14,7 @@ class   Animal {
         virtual Brain * getBrain() const;
         void    setIdea( const std::string & , int );
         std::string getIdea( int  );
-        Animal  operator=( Animal const& );
+        Animal  &operator=( Animal const& );
         virtual ~Animal( void );
         void    setTypeValue( std::string );
         std::string getTypeValue( void );

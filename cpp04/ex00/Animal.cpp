@@ -14,14 +14,14 @@ Animal::Animal( Animal const& Ani ) {
     type = Ani.type;
 }
 
-Animal  Animal::operator=( Animal const & Ani ) {
+Animal&  Animal::operator=( Animal const & Ani ) {
     std::cout << "Animal copy assignment operator called!" << std::endl;
     type = Ani.type;
     return (*this);
 }
 
 void    Animal::makeSound( void ) {
-    std::cout << "random animal sound" << std::endl;
+    std::cout << "random animal's sound" << std::endl;
 }
 
 void    Animal::setTypeValue( std::string Name ) {

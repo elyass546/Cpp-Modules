@@ -14,7 +14,7 @@ WrongCat::WrongCat( WrongCat const& Ani ) {
     type = Ani.type;
 }
 
-WrongCat  WrongCat::operator=( WrongCat const & Ani ) {
+WrongCat&  WrongCat::operator=( WrongCat const & Ani ) {
     std::cout << "WrongCat copy assignment operator called!" << std::endl;
     type = Ani.type;
     return (*this);

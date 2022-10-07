@@ -14,7 +14,7 @@ Animal::Animal( Animal const& Ani ) {
     (*this) = Ani;
 }
 
-Animal  Animal::operator=( Animal const & Ani ) {
+Animal&  Animal::operator=( Animal const & Ani ) {
     std::cout << "Animal copy assignment operator called!" << std::endl;
     type = Ani.type;
     brain = Ani.brain;

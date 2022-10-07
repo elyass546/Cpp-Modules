@@ -14,7 +14,7 @@ Cat::Cat( Cat const& Ani ) {
     type = Ani.type;
 }
 
-Cat  Cat::operator=( Cat const & Ani ) {
+Cat  &Cat::operator=( Cat const & Ani ) {
     std::cout << "Cat copy assignment operator called!" << std::endl;
     type = Ani.type;
     return (*this);
