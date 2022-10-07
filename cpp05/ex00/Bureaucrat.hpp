@@ -1,6 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include <iostream>
+#include <exception>
 
 class Bureaucrat{
     private:
@@ -13,11 +14,15 @@ class Bureaucrat{
         Bureaucrat& operator=( Bureaucrat const& );
         int getGrade( void ) const ;
         std::string getName( void ) const ;
-        void SetGrade( int );
         class GradeTooHighException : public std::exception
         {
             public:
-                virtual char * what() throw ();
+                virtual const char *what() const throw();
+        };
+        class GradeTooLowException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw();
         };
         ~Bureaucrat( void );
 };
