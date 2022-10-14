@@ -19,6 +19,8 @@ class Form
         Form( std::string, int , int);
         Form( Form const & );
         Form& operator=( Form const & );
+        ~Form();
+
         class GradeTooHighException : public std::exception{
             public:
                 virtual const char *what() const throw();
@@ -27,12 +29,13 @@ class Form
             public:
                 virtual const char *what() const throw();
         };
-        void    beSigned( Bureaucrat const& );
+
+        virtual void    beSigned( Bureaucrat const& ) = 0;
+
         std::string getName( void ) const ;
         int getSigngrade( void ) const ;
         bool    getIndice( void ) const ;
         int getexecutegrade( void ) const ;
-        ~Form();
 };
 
 std::ostream& operator<<(std::ostream&, Form const & );

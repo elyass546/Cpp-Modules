@@ -1,23 +1,35 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int main(){
+int main( void )
+{
     try {
-        Bureaucrat yal3ab(200, "ilias");
+        Bureaucrat test0(15, "John Doe 1");
+        Form form("Random Form 1", 10, 10);
+        test0.signForm(form);
     }
-    catch (std::exception & e){
-        std::cout << "Exception : " << e.what() << std::endl;
+    catch (std::exception & e)
+    {
+        std::cout << e.what();
     }
-    try{
-        Bureaucrat yal3ab(100, "jad");
-        std::cout << yal3ab << std::endl;
+    std::cout << std::endl << std::endl;
+    try {
+        Bureaucrat test0(10, "John Doe 2");
+        Form form("Random Form 2", 10, 10);
+        test0.signForm(form);
     }
-    catch (std::exception & e){
-        std::cout << "Exception : " << e.what() << std::endl;
+    catch (std::exception & e)
+    {
+        std::cout << e.what();
     }
-    try{
-        Bureaucrat yal3ab(0, "zak");
+    std::cout << std::endl << std::endl;
+    try {
+        Bureaucrat test0(9, "John Doe 3");
+        Form form("Random Form 3", 10, 10);
+        test0.signForm(form);
     }
-    catch (std::exception & e){
-        std::cout << "Exception : " << e.what() << std::endl;
+    catch (std::exception & e)
+    {
+        std::cout << e.what();
     }
 }
