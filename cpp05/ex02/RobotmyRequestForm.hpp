@@ -9,7 +9,7 @@ class RobotmyRequestForm {
         int _SignGrade;
         int _ExecuteGrade;
     public:
-        RobotmyRequestForm( void );
+        RobotmyRequestForm( std::string );
         RobotmyRequestForm( RobotmyRequestForm const &);
         RobotmyRequestForm& operator=( RobotmyRequestForm const & );
         std::string getName( void ) const;

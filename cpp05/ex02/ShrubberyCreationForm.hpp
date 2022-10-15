@@ -11,7 +11,7 @@ class ShrubberyCreationForm{
         int _SignGrade;
         int _ExecuteGrade;
     public:
-        ShrubberyCreationForm( void );
+        ShrubberyCreationForm( std::string );
         ShrubberyCreationForm( ShrubberyCreationForm const& );
         ShrubberyCreationForm&  operator=( ShrubberyCreationForm const& );
         ~ShrubberyCreationForm();

@@ -44,6 +44,10 @@ int	Form::getSigngrade( void ) const {
 	return (_SignGrade);
 }
 
+void	Form::execute( Bureaucrat const & executor) const {
+	if (executor.)
+}
+
 Form& Form::operator=( Form const & f) {
     _ExecuteGrade = f._ExecuteGrade;
     _Indice = f._Indice;

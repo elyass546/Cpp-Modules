@@ -1,16 +1,16 @@
 #include "RobotmyRequestForm.hpp"
 
-RobotmyRequestForm::RobotmyRequestForm( void ) {
+RobotmyRequestForm::RobotmyRequestForm( std::string target ) {
     _Name = "test";
     _SignGrade = 72;
     _ExecuteGrade = 45;
-    std::cout << _Name << " make noise!" << std::endl;
+    std::cout << target << " make noise!" << std::endl;
     srand(time(NULL));
     bool a = rand() % 2;
     if (a)
-        std::cout << _Name << " robotomy success" << std::endl;
+        std::cout << target << " robotomy succeeded" << std::endl;
     else
-        std::cout << _Name << " robotomy failed" << std::endl;
+        std::cout << target << " robotomy failed" << std::endl;
 }
 
 RobotmyRequestForm::RobotmyRequestForm( RobotmyRequestForm const& robot) {

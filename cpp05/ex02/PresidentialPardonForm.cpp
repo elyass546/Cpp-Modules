@@ -1,10 +1,10 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm( void ) {
+PresidentialPardonForm::PresidentialPardonForm( std::string target ) {
     _Name = "President";
     _SignGrade = 25;
     _ExecuteGrade = 5;
-    std::cout << _Name << " has been pardoned by Zaphod Beeblebrox.";
+    std::cout << target << " has been pardoned by Zaphod Beeblebrox.";
 }
 
 PresidentialPardonForm::PresidentialPardonForm( PresidentialPardonForm const & sa){

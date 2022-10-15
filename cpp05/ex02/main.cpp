@@ -33,5 +33,4 @@ int main( void )
     // {
     //     std::cout << e.what();
     // }
-    RobotmyRequestForm salam;
 }
