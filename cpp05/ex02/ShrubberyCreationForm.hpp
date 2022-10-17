@@ -1,28 +1,18 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
-#include <iostream>
-#include <exception>
 #include <fstream>
 #include "Bureaucrat.hpp"
 
-class ShrubberyCreationForm{
+class ShrubberyCreationForm : public Form{
     private:
-        std::string _Name;
-        int _SignGrade;
-        int _ExecuteGrade;
+        std::string _target;
     public:
         ShrubberyCreationForm( std::string );
         ShrubberyCreationForm( ShrubberyCreationForm const& );
         ShrubberyCreationForm&  operator=( ShrubberyCreationForm const& );
+        void    execute( Bureaucrat const & ) const ;
+        void    execution( void ) const ;
         ~ShrubberyCreationForm();
-        class GradeTooHighExecption : std::exception {
-            public:
-                virtual const char *what() const throw();
-        };
-         class GradeTooLowExecption : std::exception {
-            public:
-                virtual const char *what() const throw();
-        };
 };
 
 #endif

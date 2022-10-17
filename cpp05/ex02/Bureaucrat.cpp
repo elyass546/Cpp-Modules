@@ -33,7 +33,15 @@ std::string Bureaucrat::getName( void ) const  {
     return (Name);
 }
 
-Bureaucrat::~Bureaucrat( void ) {}
+void    Bureaucrat::executeFrom( Form const & form) {
+    try{
+        form.execute(*this);
+        std::cout << Name << " executed " << form.getName() << std::endl;
+    }
+    catch (std::exception & e){
+        std::cout << Name << " unexecuted " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
 
 std::ostream& operator<<( std::ostream& st, Bureaucrat const& bur) {
     st << bur.getName() << ", bureaucrat grade " << bur.getGrade();
@@ -47,3 +55,5 @@ const char *Bureaucrat::GradeTooHighException::what() const throw (){
 const char *Bureaucrat::GradeTooLowException::what() const throw (){
     return ("Grade too Low!!");
 }
+
+Bureaucrat::~Bureaucrat( void ) {}

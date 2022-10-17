@@ -4,7 +4,12 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) {
     _Name = "Shrubbery";
     _SignGrade = 145;
     _ExecuteGrade = 137;
-    std::ofstream	NewFile( target + "_shrubbery");
+    _target = target;
+}
+
+void    ShrubberyCreationForm::execution( void ) const {
+
+    std::ofstream	NewFile( _target + "_shrubbery");
 
     NewFile << "     - - - \n";
     NewFile << "       -        -  -     --    - \n";
@@ -28,7 +33,6 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) {
     NewFile << "                  .:@:'. \n";
     NewFile << "                .::(@:.";
 
-    NewFile.close();
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & shru) {
@@ -39,7 +43,16 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=( ShrubberyCreationForm c
     _Name = shru._Name;
     _SignGrade = shru._SignGrade;
     _ExecuteGrade = shru._ExecuteGrade;
+    _target = shru._target;
     return (*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm( void ) {}
+
+void    ShrubberyCreationForm::execute( Bureaucrat const & bur ) const {
+    if (getIndice() == false)
+        throw Form::UnsignedFormException();
+    if (bur.getGrade() > _ExecuteGrade)
+		throw Form::GradeTooLowException();
+    ShrubberyCreationForm::execution();
+}

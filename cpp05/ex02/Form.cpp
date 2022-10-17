@@ -44,10 +44,6 @@ int	Form::getSigngrade( void ) const {
 	return (_SignGrade);
 }
 
-void	Form::execute( Bureaucrat const & executor) const {
-	if (executor.)
-}
-
 Form& Form::operator=( Form const & f) {
     _ExecuteGrade = f._ExecuteGrade;
     _Indice = f._Indice;
@@ -62,6 +58,10 @@ const char *Form::GradeTooHighException::what() const throw() {
 
 const char *Form::GradeTooLowException::what() const throw() {
 	return ("Grade Too Low!");
+}
+
+const char  *Form::UnsignedFormException::what() const throw() {
+    return ("Form unsigned!");
 }
 
 std::ostream& operator<<(std::ostream& st, Form const& f) {

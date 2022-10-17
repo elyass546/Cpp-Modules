@@ -19,16 +19,20 @@ class Bureaucrat{
         int getGrade( void ) const ;
         std::string getName( void ) const ;
         void	signForm( Form & bur );
+
         class GradeTooHighException : public std::exception
         {
             public:
                 virtual const char *what() const throw();
         };
+
         class GradeTooLowException : public std::exception
         {
             public:
                 virtual const char *what() const throw();
         };
+
+        void    executeFrom( Form const & );
         ~Bureaucrat( void );
 };
 
