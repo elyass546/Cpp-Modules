@@ -4,7 +4,7 @@ CC = @c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILE =	main.cpp Bureaucrat.cpp RobotomyRequestForm.cpp \
+FILE =	main.cpp Bureaucrat.cpp RobotomyRequestForm.cpp Intern.cpp \
 		Form.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp
 
 RM = @rm -f
