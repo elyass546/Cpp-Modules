@@ -1,8 +1,7 @@
 #include "Serialize.hpp"
 
-
 int main(){
-    Data* asdf = new Data();
+    Data* asdf;
     Data data;
     uintptr_t   test1;
 
@@ -13,6 +12,5 @@ int main(){
     asdf = deserialize(test1);
     std::cout << "asdf Name after casting : " << asdf->Name << std::endl;
     std::cout << "asdf num after casting : " << asdf->number << std::endl;
-    delete asdf;
     return 0;
 }
