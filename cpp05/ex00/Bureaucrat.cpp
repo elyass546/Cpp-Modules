@@ -2,12 +2,12 @@
 
 Bureaucrat::Bureaucrat( int grade, std::string name) : Name(name), Grade(grade) {
     if (grade > 150)
-        throw Bureaucrat::GradeTooHighException();
-    if (grade < 1)
         throw Bureaucrat::GradeTooLowException();
+    if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
 }
 
-Bureaucrat::Bureaucrat( void ) : Name("ilias"), Grade(7){}
+Bureaucrat::Bureaucrat( void ) {}
 
 Bureaucrat::Bureaucrat( Bureaucrat const& bureau) {
     *this = bureau;

@@ -1,6 +1,7 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed( void ) {
+    value = 0;
 };
 
 Fixed::Fixed( const int val ) {
@@ -107,8 +108,7 @@ Fixed   Fixed::operator++( void ) {
 
 Fixed   Fixed::operator++( int ) {
     Fixed F;
-    value++;
-    F.value = value;
+    F.value = value++;
     return (F);
 }
 
@@ -120,8 +120,7 @@ Fixed   Fixed::operator--( void ) {
 
 Fixed   Fixed::operator--( int ) {
     Fixed F;
-    value--;
-    F.value = value;
+    F.value = value--;
     return (F);
 }
 

@@ -12,6 +12,9 @@ class Intern {
         Intern( void );
         Intern( Intern const & );
         Intern& operator=( Intern const & );
+        Form*   getShru( std::string )  ;
+        Form*   getPresident( std::string )  ;
+        Form*   getRoboto( std::string )  ;
         ~Intern();
 };
 

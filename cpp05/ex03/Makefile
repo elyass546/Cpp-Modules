@@ -1,4 +1,4 @@
-NAME = Form
+NAME = Intern
 
 CC = @c++
 
@@ -17,12 +17,12 @@ C_RES = \033[0m
 all : $(NAME)
 
 $(NAME) : $(FILE)
-	@echo "$(C_GREEN)["Bureaucrat" CREATED]$(C_RES)"
+	@echo "$(C_GREEN)["Intern" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 
 clean :
 	$(RM) $(NAME)
-	@echo "$(C_RED)["Bureaucrat" REMOVED]$(C_RES)"
+	@echo "$(C_RED)["Intern" REMOVED]$(C_RES)"
 
 fclean : clean
 

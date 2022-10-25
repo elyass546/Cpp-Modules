@@ -8,25 +8,31 @@ Form::Form( std::string str, int sign, int exec) : _Name(str), _SignGrade(sign) 
 		throw Form::GradeTooHighException();
 }
 
-int	Form::getExecuteGrade( void ) const {
-	return (_ExecuteGrade);
+Form::Form( void ) : _Name("ilias"){
+	_Indice = false;
+	_SignGrade = 130;
+	_ExecuteGrade = 12;
 }
 
 Form::~Form( void ) {}
+
+Form::Form( Form const & f) {
+    *this = f;
+}
+
+Form& Form::operator=( Form const & f) {
+    _ExecuteGrade = f._ExecuteGrade;
+    _Indice = f._Indice;
+    _SignGrade = f._SignGrade;
+	return (*this);
+}
 
 bool	Form::getIndice( void ) const {
 	return (_Indice);
 }
 
-void	Form::beSigned(Bureaucrat const& bur) {
-	if (_SignGrade >= bur.getGrade())
-		_Indice = true;
-	else
-		throw Form::GradeTooLowException();
-}
-
-Form::Form( Form const & f) {
-    *this = f;
+int	Form::getExecuteGrade( void ) const {
+	return (_ExecuteGrade);
 }
 
 std::string Form::getName( void ) const {
@@ -37,11 +43,11 @@ int	Form::getSigngrade( void ) const {
 	return (_SignGrade);
 }
 
-Form& Form::operator=( Form const & f) {
-    _ExecuteGrade = f._ExecuteGrade;
-    _Indice = f._Indice;
-    _SignGrade = f._SignGrade;
-	return (*this);
+void	Form::beSigned(Bureaucrat const& bur) {
+	if (_SignGrade >= bur.getGrade())
+		_Indice = true;
+	else
+		throw Form::UnsignedFormException();
 }
 
 const char *Form::GradeTooHighException::what() const throw() {

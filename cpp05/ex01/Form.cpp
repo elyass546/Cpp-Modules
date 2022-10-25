@@ -15,7 +15,7 @@ Form::Form( void ) {
 	_ExecuteGrade = 12;
 }
 
-int	Form::getexecutegrade( void ) const {
+int	Form::getExecuteGrade( void ) const {
 	return (_ExecuteGrade);
 }
 
@@ -29,7 +29,7 @@ void	Form::beSigned(Bureaucrat const& bur) {
 	if (_SignGrade >= bur.getGrade())
 		_Indice = true;
 	else
-		throw Form::GradeTooLowException();
+		throw Form::UnsignedFormException();
 }
 
 Form::Form( Form const & f) {
@@ -40,7 +40,7 @@ std::string Form::getName( void ) const {
 	return (_Name);
 }
 
-int	Form::getSigngrade( void ) const {
+int	Form::getSignGrade( void ) const {
 	return (_SignGrade);
 }
 
@@ -60,7 +60,11 @@ const char *Form::GradeTooLowException::what() const throw() {
 	return ("Grade Too Low!");
 }
 
+const char	*Form::UnsignedFormException::what() const throw() {
+	return ("Unsigned Form!!");
+}
+
 std::ostream& operator<<(std::ostream& st, Form const& f) {
-	st << f.getName() << ", bureaucrat sign grade " << f.getSigngrade() << " ,bureaucrat execute grade " << f.getexecutegrade();
+	st << f.getName() << ", Form sign grade, " << f.getSignGrade() << ", Form execute grade " << f.getExecuteGrade();
 	return (st);
 }

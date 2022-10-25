@@ -5,7 +5,7 @@
 
 int main( void )
 {
-    //Shruberry Test
+    // Shruberry Test
     try {
         ShrubberyCreationForm    chajara("chajara"); //   Required grades: sign 145, exec 137
         Bureaucrat test0(136, "John Tree");
@@ -18,7 +18,7 @@ int main( void )
     }
     std::cout << std::endl << std::endl;
     
-     //Presidential Test
+    //  Presidential Test
     try {
         PresidentialPardonForm    president("Obamna"); //    Required grades: sign 25, exec 5
         Bureaucrat test0(4, "John President");
@@ -33,7 +33,7 @@ int main( void )
     //Robotomy Test
     try {
         RobotomyRequestForm    robot("R2D2"); //     Required grades: sign 72, exec 45
-        Bureaucrat test0(30, "John Robot");
+        Bureaucrat test0(89, "John Robot");
         test0.signForm(robot);
         test0.executeForm(robot);
     }

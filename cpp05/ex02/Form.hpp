@@ -7,10 +7,10 @@ class Bureaucrat;
 
 class Form {
     private:
-        const std::string    _Name;
-        bool    _Indice;
-        int     _SignGrade;
-        int     _ExecuteGrade;
+        const std::string   _Name;
+        bool                _Indice;
+        int                 _SignGrade;
+        int                 _ExecuteGrade;
     public:
         Form( void );
         Form( std::string, int , int);

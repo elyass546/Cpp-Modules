@@ -24,9 +24,13 @@ int Bureaucrat::getGrade( void ) const  {
 }
 
 void	Bureaucrat::signForm( Form & bur ) {
-	bur.beSigned(*this);
-	if (bur.getIndice() == true)
-		std::cout << Name << "signed " << bur.getName() << std::endl;
+    try {
+	    bur.beSigned(*this);
+		std::cout << Name << " signed " << bur.getName();
+    }
+    catch (std::exception & e){
+        std::cout << Name << " couldn't sign " << bur.getName() << "because " << e.what() << std::endl; 
+    }
 }
 
 std::string Bureaucrat::getName( void ) const  {

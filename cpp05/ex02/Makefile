@@ -17,12 +17,12 @@ C_RES = \033[0m
 all : $(NAME)
 
 $(NAME) : $(FILE)
-	@echo "$(C_GREEN)["Bureaucrat" CREATED]$(C_RES)"
+	@echo "$(C_GREEN)["Forms" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 
 clean :
 	$(RM) $(NAME)
-	@echo "$(C_RED)["Bureaucrat" REMOVED]$(C_RES)"
+	@echo "$(C_RED)["Forms" REMOVED]$(C_RES)"
 
 fclean : clean
 
