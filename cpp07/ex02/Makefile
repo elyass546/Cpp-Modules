@@ -4,7 +4,7 @@ CC = @c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILE = main.cpp Array.cpp
+FILE = main.cpp
 
 RM = @rm -f
 
@@ -16,12 +16,12 @@ C_RES = \033[0m
 all : $(NAME)
 
 $(NAME) : $(FILE)
-	@echo "$(C_GREEN)["iter" CREATED]$(C_RES)"
+	@echo "$(C_GREEN)["Array" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 
 clean :
 	$(RM) $(NAME)
-	@echo "$(C_RED)["iter" REMOVED]$(C_RES)"
+	@echo "$(C_RED)["Array" REMOVED]$(C_RES)"
 
 fclean : clean
 
