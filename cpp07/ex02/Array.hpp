@@ -14,16 +14,14 @@ class Array {
             _Array = nullptr;
         }
         Array( unsigned int n) : _N(n), _Array(new T[n]()){}
-        Array( Array const& a) : _N(a._N), _Array(new T[n]()) {
+        Array( Array const& a) : _N(a._N), _Array(new T[a._N]()) {
             for (int i = 0 ; i < a._N; i++){
                 _Array[i] = a._Array[i];
             }
         }
-        Array*   operator new[]( Array const & A){
-            Array*  NewArray = new T[A._N]();
-            return (NewArray);
-        }
-        Array& operator=( Array const& a) : _N(a._N), _Array(new T[a._N]()) {
+        Array& operator=( Array const& a){
+            _N = a._N;
+            _Array = new T[a._N];
             for (int i = 0 ; i < a._N; i++){
                 _Array[i] = a._Array[i];
             }
@@ -31,9 +29,22 @@ class Array {
         }
         unsigned int getN( void ){return _N;}
         T*  getArray( void ) {return _Array;}
+        class throwObject : public std::exception {
+            public:
+                virtual const char* what() const throw(){
+                    return ("The number is out of bounds");
+                }
+        };
+        T&  operator[]( unsigned int Num ){
+            if (Num >= _N)
+            {
+                throw throwObject();
+                std::cout << "test test " << std::endl;
+            }
+            return (_Array[Num]);
+        }
+        unsigned int size( void ){return getN();}
         ~Array(){}
 };
-
-
 
 #endif
