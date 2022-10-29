@@ -8,21 +8,19 @@ class Array {
         unsigned int    _N;
         T*              _Array;
     public:
-        Array( void ){
-            _N = 0;
-            _Array = new T();
-            _Array = nullptr;
-        }
+        Array( void ) : _N(0), _Array(nullptr){}
         Array( unsigned int n) : _N(n), _Array(new T[n]()){}
         Array( Array const& a) : _N(a._N), _Array(new T[a._N]()) {
-            for (int i = 0 ; i < a._N; i++){
+            for (unsigned int i = 0 ; i < a._N; i++){
                 _Array[i] = a._Array[i];
             }
         }
         Array& operator=( Array const& a){
             _N = a._N;
+            if (_Array)
+                delete[] _Array;
             _Array = new T[a._N];
-            for (int i = 0 ; i < a._N; i++){
+            for (unsigned int i = 0 ; i < a._N; i++){
                 _Array[i] = a._Array[i];
             }
             return (*this);
@@ -36,15 +34,13 @@ class Array {
                 }
         };
         T&  operator[]( unsigned int Num ){
-            if (Num >= _N)
-            {
+            if (Num >= _N){
                 throw throwObject();
-                std::cout << "test test " << std::endl;
             }
             return (_Array[Num]);
         }
         unsigned int size( void ){return getN();}
-        ~Array(){}
+        ~Array(){delete[] _Array;}
 };
 
 #endif
