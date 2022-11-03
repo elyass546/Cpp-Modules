@@ -10,7 +10,7 @@ void add1(T &test){
 
 template <typename T> 
 void print(T &str){
-    std::cout << str;
+    std::cout << str << " ";
 }
 
 template <typename T> 

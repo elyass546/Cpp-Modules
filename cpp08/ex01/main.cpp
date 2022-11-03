@@ -1,18 +1,19 @@
 #include "Span.hpp"
 
-int main() {
+int main()
+{
     try{
-        Span Hello(5);
-        Hello.addNumber(1);
-        Hello.addNumber(345);
-        Hello.addNumber(3);
-        Hello.addNumber(490);
-        Hello.addNumber(-5);
-        // std::cout << "longest Span : " << Hello.longestSpan() << std::endl;
-        Hello.shortestSpan();
+        std::vector<int>    myvector;
+        srand(time(NULL));
+        for (int i = 0; i < 10000; i++)
+            myvector.push_back(rand());
+        Span sp = Span(100000);
+        sp.addNumber(myvector.begin(), myvector.end());
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
     }
-    catch(std::exception& e){
-        std::cout << e.what() << std::endl;
+    catch (std::exception &e){
+         std::cout << e.what() << std::endl;
     }
 }
     

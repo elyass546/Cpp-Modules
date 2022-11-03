@@ -4,6 +4,8 @@ CC = @c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
+HEADER = Array.hpp
+
 FILE = main.cpp
 
 RM = @rm -f
@@ -15,7 +17,7 @@ C_RES = \033[0m
 
 all : $(NAME)
 
-$(NAME) : $(FILE)
+$(NAME) : $(FILE) $(HEADER)
 	@echo "$(C_GREEN)["Array" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 

@@ -16,6 +16,16 @@ void    Span::addNumber( int Num ) {
     throw Span::SizeException();
 }
 
+void Span::addNumber( std::vector<int>::iterator beginIt, std::vector<int>::iterator endIt){
+    int test = std::distance(beginIt, endIt);
+    if (_Vec.size() + test <= _Max){
+        _Vec.insert(_Vec.end(), beginIt, endIt);
+        return ;
+    }
+    throw
+        Span::SizeException();
+}
+
 void    Span::print( void ){
     for (std::vector<int>::iterator it = _Vec.begin(); it != _Vec.end(); it++)
         std::cout << "vector : " << *it << std::endl;
@@ -39,15 +49,13 @@ int     Span::shortestSpan( void ) {
     int Short, Check;
     std::vector<int> CopyVec(_Vec);
     std::sort(CopyVec.begin(), CopyVec.end());
-    std::vector<int>::iterator it = CopyVec.begin();
-    Check = *it+1 - *it;
-    while (it != CopyVec.end()){
-        
-        if ((*it+1 - *it) < Check)
-            Short
-        it++;
+    Short = CopyVec[1] - CopyVec[0];
+    for (unsigned int i = 1; i < CopyVec.size() - 1; i++){
+        Check = CopyVec[i+1] - CopyVec[i];
+        if (Check < Short)
+            Short = Check;
     }
-    return (1);
+    return (Short);
 }
 
 Span::~Span( void ){}

@@ -9,12 +9,15 @@ class Array {
         T*              _Array;
     public:
         Array( void ) : _N(0), _Array(nullptr){}
+
         Array( unsigned int n) : _N(n), _Array(new T[n]()){}
+
         Array( Array const& a) : _N(a._N), _Array(new T[a._N]()) {
             for (unsigned int i = 0 ; i < a._N; i++){
                 _Array[i] = a._Array[i];
             }
         }
+
         Array& operator=( Array const& a){
             _N = a._N;
             if (_Array)
@@ -25,21 +28,23 @@ class Array {
             }
             return (*this);
         }
-        unsigned int getN( void ){return _N;}
-        T*  getArray( void ) {return _Array;}
+
         class throwObject : public std::exception {
             public:
                 virtual const char* what() const throw(){
                     return ("The number is out of bounds");
                 }
         };
+
         T&  operator[]( unsigned int Num ){
             if (Num >= _N){
                 throw throwObject();
             }
             return (_Array[Num]);
         }
-        unsigned int size( void ){return getN();}
+
+        unsigned int size( void ){return _N;}
+
         ~Array(){delete[] _Array;}
 };
 

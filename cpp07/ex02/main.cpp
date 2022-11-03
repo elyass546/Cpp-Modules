@@ -1,14 +1,5 @@
 #include "Array.hpp"
 
-
-void salam( void ){
-    Array<int>  intArray(3);
-    Array<int>  test(4);
-    Array<int>  hello;
-    test = intArray;
-    test = hello;
-}
-
 int main(){
     Array<int>            intArray(6);
     Array<std::string>    stringArray(10);
@@ -61,6 +52,5 @@ int main(){
     catch (std::exception &e){
         std::cout << e.what() << std::endl;
     }
-    salam();
-    system("leaks Array");
+
 }

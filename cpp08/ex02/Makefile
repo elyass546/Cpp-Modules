@@ -1,4 +1,4 @@
-NAME = Span
+NAME = mutanstack
 
 CC = @c++
 
@@ -16,12 +16,12 @@ C_RES = \033[0m
 all : $(NAME)
 
 $(NAME) : $(FILE)
-	@echo "$(C_GREEN)["Span" CREATED]$(C_RES)"
+	@echo "$(C_GREEN)["mutanstack" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 
 clean :
 	$(RM) $(NAME)
-	@echo "$(C_RED)["Span" REMOVED]$(C_RES)"
+	@echo "$(C_RED)["mutanstack" REMOVED]$(C_RES)"
 
 fclean : clean
 

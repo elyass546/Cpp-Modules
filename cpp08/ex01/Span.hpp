@@ -14,6 +14,7 @@ class Span {
         Span( unsigned int );
         Span( void );
         void    addNumber( int );
+        void    addNumber( std::vector<int>::iterator, std::vector<int>::iterator );
         void    print( void ); // test func
         int     shortestSpan( void );
         int     longestSpan( void );

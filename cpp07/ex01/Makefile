@@ -6,6 +6,8 @@ CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
 FILE = main.cpp
 
+HEADER = iter.hpp
+
 RM = @rm -f
 
 C_RED = \033[1;31m
@@ -15,7 +17,7 @@ C_RES = \033[0m
 
 all : $(NAME)
 
-$(NAME) : $(FILE)
+$(NAME) : $(FILE) $(HEADER)
 	@echo "$(C_GREEN)["iter" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 
