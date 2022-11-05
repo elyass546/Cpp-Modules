@@ -4,16 +4,18 @@
 #include <string>
 #include <vector>
 #include <stack>
+#include <list>
 
-template<template T>
+template<typename T>
 class MutantStack : public std::stack<T> {
     public:
-        typedef<typename iterator> std::stack<T>::container_type;
-        MutantStack( void );
-        ~MutantStack( void );
+        typedef typename std::stack<T>::container_type::iterator iterator;
 
-        iterator begin(){return std::stack<T>::c.begin();}
-        iterator end(){return std::stack<T>::c.end();}
+        MutantStack( void ){}
+        ~MutantStack( void ){}
+
+        iterator begin(){return this->c.begin();}
+        iterator end(){return this->c.end();}
 };
 
 

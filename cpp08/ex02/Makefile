@@ -1,10 +1,12 @@
-NAME = mutanstack
+NAME = mutantstack
 
 CC = @c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILE = main.cpp Span.cpp
+FILE = main.cpp
+
+HEADER = mutantstack
 
 RM = @rm -f
 
@@ -16,12 +18,12 @@ C_RES = \033[0m
 all : $(NAME)
 
 $(NAME) : $(FILE)
-	@echo "$(C_GREEN)["mutanstack" CREATED]$(C_RES)"
+	@echo "$(C_GREEN)["mutantstack" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 
 clean :
 	$(RM) $(NAME)
-	@echo "$(C_RED)["mutanstack" REMOVED]$(C_RES)"
+	@echo "$(C_RED)["mutantstack" REMOVED]$(C_RES)"
 
 fclean : clean
 
