@@ -16,7 +16,7 @@ void    Span::addNumber( int Num ) {
     throw Span::SizeException();
 }
 
-void Span::addNumber( std::vector<int>::iterator beginIt, std::vector<int>::iterator endIt){
+void Span::addRange( std::vector<int>::iterator beginIt, std::vector<int>::iterator endIt){
     int test = std::distance(beginIt, endIt);
     if (_Vec.size() + test <= _Max){
         _Vec.insert(_Vec.end(), beginIt, endIt);
@@ -56,6 +56,12 @@ int     Span::shortestSpan( void ) {
             Short = Check;
     }
     return (Short);
+}
+
+int  Span::operator[](unsigned int Num){
+    if (_Max <= Num)
+        throw SizeException();
+    return (_Vec[Num]);
 }
 
 Span::~Span( void ){}

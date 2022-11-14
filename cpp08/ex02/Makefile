@@ -6,7 +6,7 @@ CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
 FILE = main.cpp
 
-HEADER = mutantstack
+HEADER = mutantstack.hpp
 
 RM = @rm -f
 
@@ -17,7 +17,7 @@ C_RES = \033[0m
 
 all : $(NAME)
 
-$(NAME) : $(FILE)
+$(NAME) : $(FILE) $(HEADER)
 	@echo "$(C_GREEN)["mutantstack" CREATED]$(C_RES)"
 	$(CC) $(CFLAGS) $(FILE) -o $(NAME)
 

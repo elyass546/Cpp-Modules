@@ -14,8 +14,8 @@ class Span {
         Span( unsigned int );
         Span( void );
         void    addNumber( int );
-        void    addNumber( std::vector<int>::iterator, std::vector<int>::iterator );
-        void    print( void ); // test func
+        void    addRange( std::vector<int>::iterator, std::vector<int>::iterator );
+        void    print( void );
         int     shortestSpan( void );
         int     longestSpan( void );
         class   SizeException : public std::exception {
@@ -26,6 +26,8 @@ class Span {
             public :
                 virtual const char* what() const throw();
         };
+        unsigned int size( void ) {return _Max;}
+        int  operator[](unsigned int);
         ~Span();
 };
 

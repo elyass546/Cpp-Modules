@@ -2,25 +2,20 @@
 #define EASYFIND_HPP
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <vector>
 
-
-class fouss : public std::exception {
+class IndexNotFound : public std::exception {
     public:
-        virtual const char *what() const throw(){
-            return ("No number found!");
-        }
+        virtual const char *what() const throw(){return ("No number found!");}
 };
 
 template<typename T>
-void    easyfind(T* first, T second){
-    for (int i = 0; first[i] ; i++){
-        if (second == first[i])
-        {
-            std::cout << "found in index : " << i << std::endl;
-            return ;
-        }
-    }
-    throw fouss();
+void    easyfind(T first, int second){
+    typename T::iterator iter = std::find(first.begin(), first.end(), second);
+    if (iter == first.end())
+        throw IndexNotFound();
+    std::cout << "Element found at position : " << iter - first.begin() << std::endl;
 }
 
 #endif
