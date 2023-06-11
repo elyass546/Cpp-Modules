@@ -1,5 +1,6 @@
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
+
 #include <iostream>
 #include <fcntl.h>
 #include <fstream>
@@ -8,7 +9,6 @@
 #include <map>
 #include <string>
 #include <unistd.h>
-#include <regex>
 
 
 typedef std::string string;
