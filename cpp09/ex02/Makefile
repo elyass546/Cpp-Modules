@@ -4,7 +4,7 @@ CC = @c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILE = main.cpp Pmergeme.cpp
+FILE = main.cpp PmergeMe.cpp
 
 RM = @rm -f
 
