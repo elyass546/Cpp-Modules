@@ -15,6 +15,8 @@ PmergeMe::PmergeMe( char **av, int ac ) {
 				ft_error("Duplicat number");
 		}
 	}
+	std::cout << "Before: ";
+	PrintVector(_vec);
 	SortVector();
 	sortList();
 }
@@ -66,44 +68,27 @@ vector MergeInsertVector(vector& vec)
 		return vec;
 
 	int mid = vec.size() / 2;
+
 	vector left(vec.begin(), vec.begin() + mid);
 	vector right(vec.begin() + mid, vec.end());
 
-	// /******************************************/
-	// std::cout << "left in merge insert : ";
-	// for (vector::iterator it = left.begin(); it != left.end(); it++)
-	// 	std::cout << (*it) << " ";
-	// std::cout << std::endl;
-
-	// /******************************************/
-	// std::cout << "right in merge insert : ";
-	// for (vector::iterator it = right.begin(); it != right.end(); it++)
-	// 	std::cout << (*it) << " ";
-	// std::cout << std::endl;
-	// std::cout << std::endl;
-	// /******************************************/
 	left = MergeInsertVector(left);
 	right = MergeInsertVector(right);
-
 
 	return MergeVectors(left, right);
 }
 
 void PmergeMe::SortVector() {
-	// std::cout << "Vector before: ";
-	// PrintVector(_vec);
 
 	std::clock_t start = std::clock();
 	_vec = MergeInsertVector(_vec);
-	double duration = static_cast<double>(std::clock() - start) / static_cast<double>(CLOCKS_PER_SEC) * MICROSECOND;
+	float duration = static_cast<float>(std::clock() - start) / static_cast<float>(CLOCKS_PER_SEC) * US;
 
-	std::cout << "Vector after: ";
-	// PrintVector(_vec);
-
+	std::cout << "After: ";
+	PrintVector(_vec);
 	std::cout << "Time to process a range of " << _vec.size()
 		<< " elements " << "with std::vector<unsigned int> : " 
-		<< duration << " mirco seconds" << std::endl;
-	std::cout << std::endl;
+		<< duration << " us" << std::endl;
 }
 
 void PrintList(list& lst)
@@ -158,21 +143,16 @@ list mergeInsertList(list& lst)
 }
 
 void PmergeMe::sortList() {
-	std::cout << "List before: ";
-	// PrintList(_list);
 
 	std::clock_t start = std::clock();
 
 	_list = mergeInsertList(_list);
 
-	double duration = static_cast<double>(std::clock() - start) / static_cast<double>(CLOCKS_PER_SEC) * MICROSECOND;
-
-	std::cout << "List after: ";
-	// PrintList(_list);
+	float duration = static_cast<float>(std::clock() - start) / static_cast<float>(CLOCKS_PER_SEC) * US;
 
 	std::cout << "Time to process a range of " << _list.size()
 		 << " elements " << "with std::list<unsigned int> : " 
-		 << duration << " micro seconds" << std::endl;
+		 << duration << " us" << std::endl;
 }
 
 PmergeMe::~PmergeMe(void) {};

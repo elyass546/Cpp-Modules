@@ -10,7 +10,6 @@
 #include <string>
 #include <unistd.h>
 
-
 typedef std::string string;
 typedef std::stack<int> stack;
 

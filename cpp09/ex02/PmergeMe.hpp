@@ -10,7 +10,7 @@
 #include <ctime>
 #include <vector>
 #include <list>
-# define MICROSECOND 100000
+# define US 100000
 
 typedef std::string string;
 typedef std::vector<unsigned int> vector;

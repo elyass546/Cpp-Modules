@@ -4,7 +4,11 @@ BitCoinExchange::BitCoinExchange( void ) {}
 
 void	BitCoinExchange::FillData( void ) {
 	std::ifstream DataBase("./data.csv");
-
+	if (!DataBase)
+	{
+		std::cerr << "Database file not found!" << std::endl;
+		exit(1);
+	}
     string header;
     std::getline(DataBase, header); // Read the header line
 

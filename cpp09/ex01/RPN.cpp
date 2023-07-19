@@ -17,7 +17,7 @@ void	RPN::Calculation( char c ) {
 	else if (c == '/')
 	{
 		if (first == 0)
-			ft_error("kat9sam 3la 0 wach nta hbil ola malk!");
+			ft_error("Division by zero is not possible!");
 		list.push(second / first);
 	}
 }
